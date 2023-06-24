@@ -49,10 +49,10 @@ def convert_to_voc_xml(label_file, output_dir):
         for row in reader:
             image_filename = row['filename']
             object_class = row['object_class']
-            xmin = float(row['xmin'])
-            xmax = float(row['xmax'])
-            ymin = float(row['ymin'])
-            ymax = float(row['ymax'])
+            xmin = round(float(row['xmin']))
+            xmax = round(float(row['xmax']))
+            ymin = round(float(row['ymin']))
+            ymax = round(float(row['ymax']))
 
             # Group objects by image filename
             if image_filename not in image_objects:
